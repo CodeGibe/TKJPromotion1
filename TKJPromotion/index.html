@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promosi Jurusan TKJ</title>
+    <link rel="website icon" type="jpg"
+    href="LOGO TKJ.jpg">
+    <style>
+        /* CSS */
+        /* Body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            padding: 40px;
+            text-align: center;
+            color: #fff;
+            background-color: #fbc02d;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fbc02d;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #ffffff;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ffffff;
+        }
+
+        /* Main Container */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Columns */
+        .column {
+            display: none; /* Semua kolom disembunyikan awalnya */
+            flex: 1;
+            background-color: #fff;
+            margin: 10px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgb(255, 255, 255);
+            transition: box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 20px;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Headings */
+        h2 {
+            margin-top: 0;
+            font-size: 32px;
+            color: #fbc02d;
+            text-align: center;
+        }
+
+        /* Paragraphs */
+        p {
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* Images */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        img:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: justify;
+        }
+
+        /* Footer */
+        footer {
+            padding: 5px;
+            text-align: center;
+            color: #fff;
+            background-color: #000;
+            width: 100%;
+            height: 10;
+            position: fixed;
+            bottom: 0;
+        }
+
+        /* Copyright */
+        .copyright {
+            font-size: 12px;
+        }
+        /* Tambahan CSS untuk Responsif */
+        /* Tablet */
+        @media screen and (min-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .column {
+                flex: 0 0 48%; /* Ubah lebar kolom untuk menyesuaikan tata letak pada layar tablet */
+                margin: 5px;
+            }
+        }
+
+        /* Smartphone */
+        @media screen and (max-width: 767px) {
+            .container {
+                padding: 5px;
+            }
+
+            .column {
+                flex: 0 0 100%; /* Ubah lebar kolom menjadi penuh untuk tata letak pada layar smartphone */
+                margin: 5px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 5px 0;
+                padding: 10px;
+                display: block;
+            }
+
+            footer {
+                position: relative;
+                bottom: auto;
+            }
+        }
+    
+        /* CSS untuk tombol navigasi pada layar kecil */
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropbtn {
+            background-color: #000000;
+            color: #f7efef;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #ffc831;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Jurusan Teknik Komputer dan Jaringan</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="#home">Home</a>
+                <a href="#profil-Jurusan">Profil Jurusan</a>
+                <a href="#mata-pelajaran">Mata Pelajaran</a>
+                <a href="#prospek-karir">Prospek Karir</a>
+                <a href="#fasilitas">Fasilitas</a>
+                <a href="#kontak">Kontak</a>
+                <a href="#visi-misi">Visi & Misi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Layar Utama -->
+        <div class="column" id="home">
+            <section>
+                <h1>Halo Selamat Datang di TKJ</h1>
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="LOGO TKJ.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="foto1 (1).jpg" style="width:100%">
+                    </div>
+        
+                    <div class="mySlides fade">
+                        <img src="foto2 (2).jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="foto4.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="tkj.jpg" style="width:100%">
+                    </div>
+                </div>
+        
+                <p>pada jurusan TKJ ini kita akan diajarkan bagaimana cara merakit PC(Personal Computer), kemudian kita akan belajar cara menginstal OS(Operating System), dan kita akan mengetahui bagian-bagian komponen hardware dari Computer, bahkan yang lebih luasnya kita akan mempelajari perangkat hardware jaringan komputer, jadi yang pada intinya jurusan ini akan membahas lebih dalam perangkat hardware, software pada komputer dan juga jaringan.</p>
+            </section>
+        </div>
+        
+            <script>
+                var slideIndex = 0;
+                showSlides();
+            
+                function showSlides() {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) {slideIndex = 1}
+                    slides[slideIndex-1].style.display = "block";
+                    setTimeout(showSlides, 2000); // Change image every 2 seconds
+                }
+            </script>
+
+        <!-- Profil TKJ -->
+        <div class="column" id="profil-Jurusan">
+            <section>
+                <h2>Profil Jurusan</h2>
+                <p>Jurusan Teknik Komputer dan Jaringan (TKJ) merupakan salah satu jurusan di bidang teknologi informasi yang fokus pada pengembangan keterampilan dalam merakit dan memperbaiki perangkat keras komputer, mengelola jaringan komputer, serta memahami keamanan informasi.</p>
+                <p>Selain itu, kami memiliki guru-guru yang berpengalaman dan berkualifikasi tinggi untuk membimbing siswa dalam menguasai keterampilan teknis yang diperlukan dalam industri IT saat ini.</p>
+                <h3>Guru Jurusan</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama Guru</th>
+                            <th>Bidang Keahlian</th>
+                            <th>Foto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ribka Manu Hunga, S.Kom</td>
+                            <td>Komputer Dan Jaringan Dasar</td>
+                            <td><img src="ribka.jpg" alt="Ribka Manu Hunga" style="width: 100px;"></td>
+                        </tr>
+                        <tr>
+                            <td>Ebenheser Lay Heo, S.Kom</td>
+                            <td>Pemrograman Dasar Dan Teknologin Jaringan Berbasis Luas</td>
+                            <td><img src="eben.jpg" alt="Ebenheser Lay Heo" style="width: 100px;"></td>
+                        </tr>
+                        <tr>
+                            <td>Charol Imanuel Ully, S.Kom</td>
+                            <td>Dasar Design Grafis Dan Administrasi Sistem Jaringan</td>
+                            <td><img src="iman.jpg" alt="Charol Imanuel Ully" style="width: 100px;"></td>
+                        </tr>
+                        <tr>
+                            <td>Daniel Djawa, S.Kom</td>
+                            <td>Sistem Komputer Dan Administrasi Infrastruktur Jaringan</td>
+                            <td><img src="dewa.jpg" alt="Daniel Djawa" style="width: 100px;"></td>
+                        </tr>
+                        <tr>
+                            <td>Laura Felisa Mangngi, S.Kom</td>
+                            <td>Simulasi Dan Komunikasi Digital Dan Administrasi Sistem Jaringan</td>
+                            <td><img src="laura.jpg" alt="Laura Felisa Mangngi" style="width: 100px;"></td>
+                        </tr>
+                        <tr>
+                            <td>Deby D. W. Boby, S.Kom</td>
+                            <td>Teknologi Layanan Jaringan</td>
+                            <td><img src="deby.jpg" alt="Deby D. W. Boby" style="width: 100px;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- Mata Pelajaran -->
+        <div class="column" id="mata-pelajaran">
+            <section>
+                <h4>Mata Pelajaran Jurusan</h4>
+                <p>Di Jurusan TKJ Kelas X, Anda akan mempelajari mata pelajaran seperti:</p>
+                <ul>
+                    <li>Pemrograman Dasar</li>
+                    <li>Komputer & Jaringan Dasar</li>
+                    <li>Sistem Komputer</li>
+                    <li>Simulasi & Komunikasi Digital</li>
+                    <li>Dasar Design Grafis</li>
+                </ul>
+                <p>Di Jurusan TKJ Kelas XI, Anda akan mempelajari mata pelajaran seperti:</p>
+                <ul>
+                    <li>Administrasi Infrastruktur Jaringan</li>
+                    <li>Teknologi Berbasis Luas</li>
+                    <li>Administrasi Sistem Jaringan</li>
+                    <li>Teknologi Layanan Jaringan</li>
+                    <li>Produk Kreatif & Kewirausahaan</li>
+                </ul>
+                <p>Di Jurusan TKJ Kelas XII, Anda akan mempelajari mata pelajaran seperti:</p>
+                <ul>
+                    <li>Administrasi Infrastruktur Jaringan</li>
+                    <li>Administrasi Sistem Jaringan</li>
+                    <li>Teknologi Layanan Jaringan</li>
+                    <li>Produk Kreatif & Kewirausahaan</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Prospek Karir -->
+        <div class="column" id="prospek-karir">
+            <section>
+                <h2>Prospek Karir</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Posisi</th>
+                            <th>Foto</th>
+                            <th>Deskripsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Programer</strong></td>
+                            <td style="text-align: center;"><img src="programer.jpg" alt="Programmer" class="foto" style="width: 50%; height: 20%; display: block; margin: auto;"></td>
+                            <td>Programmer bertanggung jawab untuk mengembangkan dan memelihara perangkat lunak.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Teknisi Jaringan</strong></td>
+                            <td style="text-align: center;"><img src="teknisi jaringan.jpg" alt="Teknisi Jaringan" class="foto" style="width: 50%; height: 20%; display: block; margin: auto;"></td>
+                            <td>Teknisi jaringan bertanggung jawab untuk mengelola, merawat, dan memperbaiki jaringan komputer.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Administrator Sistem</strong></td>
+                            <td style="text-align: center;"><img src="adminsystem.jpg" alt="Administrator Sistem" class="foto" style="width: 50%; height: 20%; display: block; margin: auto;"></td>
+                            <td>Administrator sistem bertanggung jawab untuk mengelola dan menjaga keamanan sistem komputer dan jaringan.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Spesialis Keamanan Informasi</strong></td>
+                            <td style="text-align: center;"><img src="Internet-Banking-Part-3.jpg" alt="Spesialis Keamanan Informasi" class="foto" style="width: 50%; height: 20%; display: block; margin: auto;"></td>
+                            <td>Spesialis keamanan informasi bertanggung jawab untuk melindungi sistem komputer dan data dari ancaman keamanan.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Desainer Web</strong></td>
+                            <td style="text-align: center;"><img src="wd.jpg" alt="Desainer Web" class="foto" style="width: 50%; height: 20%; display: block; margin: auto;"></td>
+                            <td>Desainer web bertanggung jawab untuk membuat desain visual dan antarmuka pengguna untuk situs web.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+                   
+            </section>
+        </div>
+
+        <!-- Fasilitas -->
+        <div class="column" id="fasilitas">
+            <section>
+                <h2>Fasilitas</h2>
+                <img src=".jpg" alt="Fasilitas">
+                <p>Jurusan TKJ menyediakan fasilitas modern untuk mendukung pembelajaran siswa, seperti laboratorium komputer, akses internet cepat, dan perpustakaan digital.</p>
+            </section>
+        </div>
+
+        <!-- Visi dan Misi -->
+        <div class="column" id="visi-misi">
+            <section>
+                <h2>Visi & Misi</h2>
+                <p>Visi: Menghasilkan tenaga kerja yang beriman, bertaqwa, berahklak mulia serta profesional untuk industri IT berskala global.</p>
+                <p>Misi: 
+                <ul>
+                    <li>Mengembangkan sikap dn keterampilan pesrta didik dalam bidang keahlian teknik komputer dan jaringan.</li>
+                    <li>Menguasai keterampilan dalam pengoperasian bidang teknik komputer dan jaringan.</li>
+                    <li>Mengusai keterampilan dalam penggunaan perangkat lunak teknik komputer dan jaringan.</li>
+                    <li>Mampu mengembangkan bidan teknik komputer dan jaringan yang relevan dengan tuntutan kebutuhan masyarakat.</li>
+                </ul>
+                </p>
+            </section>
+        </div>
+
+        <!-- Kontak -->
+        <div class="column" id="kontak">
+            <section>
+                <h2>Kontak</h2>
+                <p>Jika Anda tertarik dengan Jurusan TKJ atau memiliki pertanyaan lebih lanjut, jangan ragu untuk menghubungi kami:</p>
+                <p>Email: smkn1sarai@gmail.com<br>
+                Telepon: 081337301878<br>
+                Alamat: Jl. Koloudju - Menia, Kecamatan Sabu Barat, Kabupaten Sabu Raijua</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p class="copyright">PROMOSI JURUSAN TKJ SMKN 1 SABU BARAT- Hak Cipta © 2024. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // JavaScript untuk menampilkan konten yang sesuai dengan tombol yang diklik
+        document.addEventListener("DOMContentLoaded", function() {
+            const homeContent = document.getElementById("home");
+            homeContent.style.display = "block"; // Tampilkan konten home awalnya
+
+            const navLinks = document.querySelectorAll("nav a");
+            navLinks.forEach(link => {
+                link.addEventListener("click", function() {
+                    const targetId = this.getAttribute("href").substring(1); // Dapatkan id target dari href
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        // Semua konten disembunyikan
+                        document.querySelectorAll(".column").forEach(element => {
+                            element.style.display = "none";
+                        });
+
+                        // Tampilkan hanya konten yang sesuai dengan tombol yang diklik
+                        targetElement.style.display = "block";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
